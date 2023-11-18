@@ -2,4 +2,226 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: auto;
+  font-family: "IBM Plex Mono";
+  
+}
+
+/*375 - 668px*/
+
+.header {
+  min-width: 375px;
+  box-sizing: border-box;
+  min-height: 668px;
+  margin: 0px;
+  padding: 10px;
+  background-image: url(../images/cover-image-dark.png);
+}
+.header__theme-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0px;
+  padding: 76.5px 0px 0px 305px;
+}
+.header__theme-menu-item {
+  min-width: 44px;
+  min-height: 23px;
+
+  color: #FF0070;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.header__theme-menu-button {
+  color: #FF0070;
+  background-image: url(../images/cover-image-dark.png);
+  border: none;
+}
+.header__title {
+  min-width: 355px;
+  min-height: 192px;
+  margin: 0px;
+  padding: 66.5px 0px 55px;
+  color: #DB00FF;
+  text-shadow: 4px 4px 0px #FF0070;
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+}
+.header__subtitle {
+  min-width: 355px;
+  min-height: 117px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #FF0070;
+
+  color: #000028;
+  /*обводка и шрифт не те*/
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+/*сдвинулся край почему-то белый торчит*/
+
+.lead {
+  margin: 0px;
+  padding: 0px 10px;
+  background-color: #000028;
+  color: #FF0070;
+}
+.lead__title {
+  margin: 0px;
+  min-width: 345px;
+  min-height: 47px;
+  margin: 0px;
+  padding: 40px 0px 0px;
+
+  color: #FF0070;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.lead__subtitle {
+  min-width: 355px;
+  min-height: 23px;
+  margin: 20px 0px 10px;
+  color: #000028;
+  background-color: #FF0070;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.lead__text {
+  color: #F1B2CE;
+  margin: 0px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.attention {
+  padding: 50px 10px 0px;
+  margin: 0px;
+
+  background-color: #000028;
+  color: #FF0070;
+}
+.attention__title {
+  margin: 0px 0px 20px;
+
+  color: #FF0070;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.attention__subtitle {
+  color: #000028;
+  background-color: #FF0070;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.attention__text {
+  color: #F1B2CE;
+  margin: 0px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.advices {
+  padding: 50px 10px;
+  background-color: #000028;
+}
+.advices__title {
+  padding: 0px 0px 20px;
+  margin: 0px;
+
+  color: #FF0070;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.advices__subtitle {
+  padding: 0px 0px 0px;
+  margin: 0px;
+
+  color: #000028;
+  background-color: #FF0070;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.advices__subtitle:first-of-type {
+  margin-bottom: 20px;
+}
+.advices__text {
+  color: #F1B2CE;
+  margin: 0px;
+  padding: 0px 0px 20px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.photo {
+  min-width: 375px;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  margin: 0px;
+  background-color: #000028;
+}
+/*вылезло почему-то*/
+.photo__title {
+  padding: 0px;
+  margin: 0px 0px 10px;
+  color: #000028;
+
+  background-color: #FF0070;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+.photo__sunset {
+  width: 355px;
+  height: 142px;
+}
+.photo__cats {
+  width: 355px;
+  height: 355px;
+}
+.photo__music {
+  width: 355px;
+  height: 237px;
+}
+.photo__books {
+  width: 355px;
+  height: 355px;
+}
+.photo__street {
+  width: 355px;
+  height: 237px;
 }
