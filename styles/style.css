@@ -47,12 +47,16 @@
   width: 60px;
   height: 26px;
 }
+@media (min-width: 768px) {
+  .header__record {
+    padding: 20px 20px 0px 0px;
+  }
+}
 .header__rec {
   width: 32px;
   height: 26px;
   margin: 0px;
   padding: 1px 4px 0px 0px;
-
   color: #FF0070;
   text-align: center;
   font-size: 18px;
@@ -88,8 +92,20 @@
   /*justify-content: right;*/
   position: relative;
   margin: 0px;
-  padding: 39px 10px 0px 295px;
+  padding: 40px 10px 0px 295px;
   align-content: center;
+}
+@media (min-width: 768px) {
+  .header__theme-menu {
+    padding: 147px 20px 0px 678px;
+  }
+}
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    padding: 20px 310px 0px 397px;
+    width: 236px;
+    height: 25px;
+  }
 }
 /*нужно тоже прибить его к краю*/
 .header__theme-menu-list {
@@ -101,6 +117,13 @@
   gap: 13px;
   margin: 0px;
   padding: 0px;
+}
+@media (min-width: 1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+    width: 236px;
+    height: 25px;
+  }
 }
 .header__theme-menu-item {
   min-width: 44px;
@@ -125,7 +148,7 @@
 .header__title {
   position: relative;
   min-width: 355px;
-  min-height: 192px;
+  max-height: 192px;
   margin: 0px;
   padding: 65px 10px 55px;
   color: #DB00FF;
@@ -135,10 +158,24 @@
   font-weight: 700;
   line-height: 82.5%;
 }
+@media (min-width: 768px) {
+  .header__title {
+    min-width: 577px;
+    max-height: 99px;
+    padding: 0px 0px 162px;
+  }
+}
+@media (min-width: 1024px) {
+  .header__title {
+    min-width: 759px;
+    max-height: 130px;
+    padding: 274.5px 0px 114px;
+  }
+}
 .header__subtitle {
   position: relative;
   min-width: 355px;
-  min-height: 117px;
+  max-height: 117px;
   margin: 0px 10px 31px;
   padding: 0px;
   background-color: #FF0070;
@@ -148,6 +185,19 @@
   font-weight: 700;
   line-height: 23.4px;
 }
+@media (min-width: 768px) {
+  .header__subtitle {
+    min-width: 364px;
+    margin: 0px 20px 138px 384px;
+  }
+}
+@media (min-width: 1024px) {
+  .header__subtitle {
+    min-width: 491px;
+    max-height: 71px;
+    margin: 0px 20px 89px 513px;
+  }
+}
 .header__rectangle-bottom {
   position: relative;
   display: inline-block;
@@ -155,10 +205,15 @@
   height: 25px;
   border-bottom: 1px solid #FF0070;
   border-left: 1px solid #FF0070;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 10px 10px;
 }
-/*сдвинулся край почему-то белый торчит*/
+@media (min-width: 768px) {
+  .header__rectangle-bottom {
+    margin: 0px 0px 20px 20px;
+  }
+}
 
+/*сдвинулся край почему-то белый торчит*/
 .lead {
   margin: 0px;
   padding: 0px 10px;
