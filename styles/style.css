@@ -2,33 +2,111 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  margin: auto;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /*padding-inline: 2.6%;*/
+  display: grid;
+  row-gap: 40px;
+
   font-family: "IBM Plex Mono";
-  
+  margin: 0px auto;
+}
+
+.body {
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
+  /*margin: 0 auto;*/
+  font-family: var(--font), sans-serif;
+  font-size: var(--font-size);
 }
 
 /*375 - 668px*/
 
 .header {
+  position: relative;
   min-width: 375px;
   box-sizing: border-box;
   min-height: 668px;
   margin: 0px;
-  padding: 10px;
-  background-image: url(../images/cover-image-dark.png);
+  /*padding: 10px;*/
+  padding: 0px;
+  /*background-image: url(../images/cover-image-dark.png);*/
+  background-position: var(--background-image);
 }
+.header__record {
+  position: relative;
+  display: flex;
+  float: right;
+  /*justify-content: right;*/
+  margin: 0px;
+  padding: 10px 10px 0px 0px;
+  width: 60px;
+  height: 26px;
+}
+.header__rec {
+  width: 32px;
+  height: 26px;
+  margin: 0px;
+  padding: 1px 4px 0px 0px;
+
+  color: #FF0070;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+.header__rectangle-top {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid #FF0070;
+  border-right: 1px solid #FF0070;
+}
+.header__elipse {
+  position: relative;
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0px 0px 1px 8px;
+  /*размер круга зависит от паддинга*/
+  padding: 1px;
+  background-color: #FF0070;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 0px 5px 4px #FF0070 ;
+  border-radius: 50%;
+}
+.header__theme-menu {
+  width: 70px;
+  height: 104px;
+  display: flex;
+  /*justify-content: right;*/
+  position: relative;
+  margin: 0px;
+  padding: 39px 10px 0px 295px;
+  align-content: center;
+}
+/*нужно тоже прибить его к краю*/
 .header__theme-menu-list {
+  width: 70px;
+  height: 104px;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 13px;
   margin: 0px;
-  padding: 76.5px 0px 0px 305px;
+  padding: 0px;
 }
 .header__theme-menu-item {
   min-width: 44px;
   min-height: 23px;
-
+  /*чтоб к краю прибить*/
+  padding: 0px 0px 0px 10px;
   color: #FF0070;
   text-align: center;
   font-size: 18px;
@@ -40,12 +118,16 @@
   color: #FF0070;
   background-image: url(../images/cover-image-dark.png);
   border: none;
+  min-width: 44px;
+  min-height: 23px;
+  padding: 1.5px 13px;
 }
 .header__title {
+  position: relative;
   min-width: 355px;
   min-height: 192px;
   margin: 0px;
-  padding: 66.5px 0px 55px;
+  padding: 65px 10px 55px;
   color: #DB00FF;
   text-shadow: 4px 4px 0px #FF0070;
   font-size: 116px;
@@ -54,20 +136,27 @@
   line-height: 82.5%;
 }
 .header__subtitle {
+  position: relative;
   min-width: 355px;
   min-height: 117px;
-  margin: 0px;
+  margin: 0px 10px 31px;
   padding: 0px;
   background-color: #FF0070;
-
   color: #000028;
-  /*обводка и шрифт не те*/
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
-
+.header__rectangle-bottom {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid #FF0070;
+  border-left: 1px solid #FF0070;
+  margin: 0px 0px 0px 10px;
+}
 /*сдвинулся край почему-то белый торчит*/
 
 .lead {
