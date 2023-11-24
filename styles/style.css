@@ -246,6 +246,7 @@
 }
 .lead__title {
   margin: 0px;
+  /* MIN-WIDTH 355PX */
   min-width: 345px;
   max-height: 47px;
   margin: 0px;
@@ -287,7 +288,6 @@
   margin: 20px 0px 10px 0px;
   color: #000028;
   background-color: #FF0070;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -303,25 +303,72 @@
 }
 
 .attention {
-  padding: 50px 10px 0px;
+  /* SCROLL <391px */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 355px;
+  padding: 50px 0px 0px;
   margin: 0px;
-
   background-color: #000028;
   color: #FF0070;
 }
+@media (min-width: 768px) {
+  .attention {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .attention__title {
-  margin: 0px 0px 20px;
-
+  margin: 0px;
+  padding: 0px;
+  min-width: 236px;
+  max-height: 47px;
   color: #FF0070;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
+@media (min-width: 768px) {
+  .attention__title {
+    max-width: 236px;
+    max-height: 70px;
+  }
+}
+@media (min-width: 1024px) {
+  .attention__title {
+    max-width: 315px;
+    max-height: 47px;
+  }
+}
+.attention__table {
+  /* flex */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+}
+@media (min-width: 1024px) {
+  .attention__table {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+.attention__cell {
+  min-width: 315px;
+}
 .attention__subtitle {
+  min-width: 315px;
+  max-height: 24px;
+  margin: 20px 0px 10px 0px;
+  padding: 0px;
   color: #000028;
   background-color: #FF0070;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -330,7 +377,6 @@
 .attention__text {
   color: #F1B2CE;
   margin: 0px;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
