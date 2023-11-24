@@ -213,30 +213,78 @@
   }
 }
 
-/*сдвинулся край почему-то белый торчит*/
-.lead {
+.main {
+  position: relative;
+  display: flex;
   margin: 0px;
   padding: 0px 10px;
+  box-sizing: border-box;
+  min-width: 375px;
+  background-color: var(--background-color);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 0px 20px;
+    min-width: 728px;
+  }
+}
+
+.lead {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
   background-color: #000028;
   color: #FF0070;
+}
+@media (min-width: 768px) {
+  .lead {
+    flex-direction: row;
+  }
 }
 .lead__title {
   margin: 0px;
   min-width: 345px;
-  min-height: 47px;
+  max-height: 47px;
   margin: 0px;
   padding: 40px 0px 0px;
-
   color: #FF0070;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
+@media (min-width: 768px) {
+  .lead__title {
+    min-width: 236px;
+    max-height: 71px;
+    padding: 60px 20px 0px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .lead__title {
+    min-width: 315px;
+    max-height: 47px;
+  }
+}
+.lead__table {
+  /*для флекса таблица*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px;
+}
+@media (min-width: 768px) {
+.lead__table {
+  margin-top: 40px;
+}
+}
 .lead__subtitle {
   min-width: 355px;
   min-height: 23px;
-  margin: 20px 0px 10px;
+  margin: 20px 0px 10px 0px;
   color: #000028;
   background-color: #FF0070;
 
@@ -248,7 +296,6 @@
 .lead__text {
   color: #F1B2CE;
   margin: 0px;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
