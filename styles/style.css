@@ -219,15 +219,14 @@
   margin: 0px;
   padding: 0px 10px;
   box-sizing: border-box;
-  /*min-width: 375px;*/
-  min-width: 355px;
+  min-width: 375px;
   background-color: var(--background-color);
 }
 
 @media (min-width: 768px) {
   .main {
     padding: 0px 20px;
-    min-width: 728px;
+    min-width: 768px;
   }
 }
 @media (min-width: 1024px) {
@@ -388,9 +387,13 @@
   font-weight: 400;
   line-height: 23.4px;
 }
+.text-shadow {
+  text-shadow: #FF0070 2px 2px;
+}
 
 .advices {
   /* SCROLL < 375px */
+  min-width: 355px;
   padding: 50px 0px;
   background-color: #000028;
   position: relative;
@@ -399,6 +402,7 @@
 }
 @media (min-width: 768px) {
   .advices {
+    min-width: 728px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -457,41 +461,184 @@
 }
 
 .photo {
-  min-width: 375px;
+  min-width: 355px;
   box-sizing: border-box;
-  padding: 0px 10px;
+  padding: 0px 0px 40px;
   margin: 0px;
   background-color: #000028;
 }
+@media (min-width: 768px) {
+  .photo {
+    padding-bottom: 60px;
+  }
+}
 /*вылезло почему-то*/
 .photo__title {
+  min-width: 355px;
+  max-height: 24px;
   padding: 0px;
-  margin: 0px 0px 10px;
+  margin: 0px;
   color: #000028;
-
   background-color: #FF0070;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
+@media (min-width: 768px) {
+  .photo__title {
+    min-width: 728px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo__title {
+    min-width: 984px;
+  }
+}
+/*
+.photo__gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .photo__gallery {
+    flex-direction: row;
+  }
+}*/
+.photo__gallery {
+  display: grid;
+  padding: 0px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .photo__gallery {
+    grid-template-columns: repeat(3, 230px);
+    grid-template-rows: repeat(3, 105px);
+    /*grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(3, 200px);*/
+  }
+}
+@media (min-width: 1024px) {
+.photo__gallery {
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(4, 100px);
+  }
+}
 .photo__sunset {
-  width: 355px;
+  min-width: 315px;
   height: 142px;
+  object-fit: cover;
+  padding: 10px 0px;
+}
+@media (min-width: 768px) {
+  .photo__sunset {
+    width: 479px;
+    height: 179px;
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    padding: 20px 20px 20px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo__sunset {
+    width: 649px;
+    height: 260px;
+  }
 }
 .photo__cats {
   width: 355px;
   height: 355px;
+  object-fit: cover;
+  padding: 0px 0px 10px 0px;
+}
+@media (min-width: 768px) {
+  .photo__cats {
+    width: 229px;
+    height: 441px;
+    display: grid;
+    grid-column: 3;
+    grid-row: 1 / 4;
+    padding: 20px 0px 20px 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo__cats {
+    width: 315px;
+    height: 595px;
+    padding: 20px 0px 20px 70px;
+  }
 }
 .photo__music {
   width: 355px;
   height: 237px;
+  object-fit: cover;
+  padding: 0px 0px 10px 0px;
+}
+@media (min-width: 768px) {
+  .photo__music {
+    width: 229px;
+    height: 568px;
+    display: grid;
+    grid-column: 1;
+    grid-row: 3 / 4;
+    padding: 15px 20px 20px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo__music {
+    width: 315px;
+    height: 768px;
+    padding: 100px 20px 20px 0px;
+  }
 }
 .photo__books {
   width: 355px;
   height: 355px;
+  object-fit: cover;
+  padding: 0px 0px 10px 0px;
+}
+@media (min-width: 768px) {
+  .photo__books {
+    width: 230px;
+    height: 230px;
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 120px 20px 20px 20px;
+    
+  }
+}
+@media (min-width: 1024px) {
+  .photo__books {
+    width: 315px;
+    height: 315px;
+    padding: 200px 20px 20px 36px;
+  }
 }
 .photo__street {
   width: 355px;
   height: 237px;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .photo__street {
+    width: 479px;
+    height: 318px;
+    display: grid;
+    grid-column: 2;
+    grid-row: 4;
+    padding: 160px 0px 0px 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo__street {
+    width: 649px;
+    height: 428px;
+    padding: 340px 0px 20px 38px;
+  }
 }
