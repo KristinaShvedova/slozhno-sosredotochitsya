@@ -10,3 +10,9 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
+.header.theme_dark {
+  background-image: url(../images/cover-image-dark.png);
+  /* не работает так почему-то
+  background-image: var(--background-image);*/
+}

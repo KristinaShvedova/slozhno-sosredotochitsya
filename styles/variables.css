@@ -2,7 +2,12 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
-.page {
+.page .theme-dark {
   --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
+}
+
+.theme-light .page {
+  --background-color: #FF8DCB;
+  --background-image: url(../images/cover-image-light.png);
 }

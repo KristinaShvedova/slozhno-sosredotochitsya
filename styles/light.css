@@ -9,4 +9,103 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  /* не работают свойства 
+  background-color: var(--background-color);
+  background-image: var(--background-imege; */
+  background-color: #FF8DCB;
+  background-image: url(../images/cover-image-light.png);
+}
+
+.header.theme_light {
+  background-color: #FF8DCB;
+  background-image: url(../images/cover-image-light.png);
+  background-size: cover;
+}
+.header__theme-menu-button {
+  background-image: url(../images/cover-image-light.png);
+  color: #353430;
+}
+.header__theme-menu-button_active {
+  /*при нажатии сначала срабатывает розовый цвет*/
+  border: 1px solid #353430;
+}
+.header__theme-menu-button_active:hover {
+  border: 1px solid 1px solid rgba(50, 49, 45, 0.40);  
+}
+.header__theme-menu-button_active:focus {
+  border-bottom: 1px solid #353430;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.header__title {
+  color: #FFC2E6;
+  text-shadow: 4px 4px 0px #353430;
+  
+}
+.header__subtitle {
+  background-color: #FFC2E6;
+  color: #353430;
+}
+
+.lead {
+  background-image: url(../images/cover-image-light.png);
+}
+.lead__title {
+  color: #353430;
+}
+.lead__subtitle {
+  color: #353430;
+  background-color: #FFC2E6;
+}
+.lead__text {
+  color: #353430;
+}
+
+.attention {
+  background-image: url(../images/cover-image-light.png);
+}
+.attention__title {
+  color: #353430;
+}
+.attention__subtitle  {
+  color: #353430;
+  background-color: #FFC2E6;
+}
+.attention__text {
+  color: #353430;
+}
+
+.advices {
+  background-image: url(../images/cover-image-light.png);
+}
+.advices__title {
+  color: #353430;
+}
+.advices__subtitle {
+  color: #353430;
+  background-color: #FFC2E6;
+}
+.advices__paragraph {
+  color: #353430;
+  background-color: #FFC2E6;
+}
+.advices__text {
+  color: #353430;
+}
+
+.photo {
+  background-image: url(../images/cover-image-light.png);
+}
+.photo__title {
+  color: #353430;
+  background-color: #FFC2E6;
+}
+
+.footer {
+  background-image: url(../images/cover-image-light.png);
+}
+.footer__title {
+  color: #FFC2E6;
+  text-shadow: 2px 2px 0px #FF8DCB;
 }

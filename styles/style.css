@@ -2,8 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: var(--background-color);
-  background-image: var(--background-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,9 +9,10 @@
   /*padding-inline: 2.6%;*/
   display: grid;
   row-gap: 40px;
-
   font-family: "IBM Plex Mono";
   margin: 0px auto;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
 }
 
 .body {
@@ -33,9 +32,12 @@
   min-height: 668px;
   margin: 0px;
   /*padding: 10px;*/
-  padding: 0px;
-  /*background-image: url(../images/cover-image-dark.png);*/
-  background-position: var(--background-image);
+  padding: 10px 10px 10px 0px;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 20px 20px 0px;
+  }
 }
 .header__record {
   position: relative;
@@ -43,13 +45,13 @@
   float: right;
   /*justify-content: right;*/
   margin: 0px;
-  padding: 10px 10px 0px 0px;
+  padding: 0px;
   width: 60px;
   height: 26px;
 }
 @media (min-width: 768px) {
   .header__record {
-    padding: 20px 20px 0px 0px;
+    padding: 0px;
   }
 }
 .header__rec {
@@ -102,7 +104,7 @@
 }
 @media (min-width: 1024px) {
   .header__theme-menu {
-    padding: 20px 310px 0px 397px;
+    padding: 0px 310px 0px 397px;
     width: 236px;
     height: 25px;
   }
@@ -152,6 +154,7 @@
   border: 1px solid rgba(255, 0, 112, 0.40);  
 }
 .header__theme-menu-button_active:focus {
+  /* если поставить фокус-визибл не так работает эффект*/
   border-bottom: 1px solid #FF0070;
   border-top: none;
   border-right: none;
@@ -207,7 +210,7 @@
   .header__subtitle {
     min-width: 491px;
     max-height: 71px;
-    margin: 0px 20px 89px 513px;
+    margin: 0px 0px 89px 513px;
   }
 }
 .header__rectangle-bottom {
@@ -217,11 +220,11 @@
   height: 25px;
   border-bottom: 1px solid #FF0070;
   border-left: 1px solid #FF0070;
-  margin: 0px 0px 10px 10px;
+  margin: 0px 0px 0px 10px;
 }
 @media (min-width: 768px) {
   .header__rectangle-bottom {
-    margin: 0px 0px 20px 20px;
+    margin: 20px 0px 0px 20px;
   }
 }
 
@@ -230,7 +233,7 @@
   display: flex;
   flex-direction: column;
   margin: 0px;
-  padding: 0px 10px;
+  padding: 0px;
   box-sizing: border-box;
   min-width: 375px;
   background-color: var(--background-color);
@@ -238,7 +241,6 @@
 
 @media (min-width: 768px) {
   .main {
-    padding: 0px 20px;
     min-width: 768px;
   }
 }
@@ -253,13 +255,14 @@
   display: flex;
   flex-direction: column;
   margin: 0px;
-  padding: 0px;
+  padding: 0px 10px;
   background-color: #000028;
   color: #FF0070;
 }
 @media (min-width: 768px) {
   .lead {
     flex-direction: row;
+    padding: 0px 20px;
   }
 }
 .lead__title {
@@ -267,7 +270,6 @@
   /* MIN-WIDTH 355PX */
   min-width: 345px;
   max-height: 47px;
-  margin: 0px;
   padding: 40px 0px 0px;
   color: #FF0070;
   font-size: 18px;
@@ -326,8 +328,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  min-width: 355px;
-  padding: 50px 0px 0px;
+  min-width: 375px;
+  padding: 50px 10px 0px;
   margin: 0px;
   background-color: #000028;
   color: #FF0070;
@@ -337,6 +339,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    padding: 50px 20px 0px;
   }
 }
 .attention__title {
@@ -406,15 +409,17 @@
 
 .advices {
   /* SCROLL < 375px */
-  min-width: 355px;
-  padding: 50px 0px;
+  min-width: 375px;
+  padding: 50px 10px 0px;
   background-color: #000028;
   position: relative;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .advices {
+    padding: 50px 20px 0px;
     min-width: 728px;
     position: relative;
     display: flex;
@@ -446,14 +451,12 @@
 }
 .advices__table {
   /* flex */
-
 }
 .advices__subtitle {
   padding: 0px 0px 0px;
   margin: 0px;
   color: #000028;
   background-color: #FF0070;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -462,11 +465,20 @@
 .advices__subtitle:first-of-type {
   margin-bottom: 20px;
 }
+.advices__paragraph {
+  padding: 0px 0px 0px;
+  margin: 0px;
+  color: #000028;
+  background-color: #FF0070;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+}
 .advices__text {
   color: #F1B2CE;
   margin: 0px;
   padding: 0px 0px 20px;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -474,15 +486,15 @@
 }
 
 .photo {
-  min-width: 355px;
+  min-width: 375px;
   box-sizing: border-box;
-  padding: 0px 0px 40px;
+  padding: 0px 10px 40px;
   margin: 0px;
   background-color: #000028;
 }
 @media (min-width: 768px) {
   .photo {
-    padding-bottom: 60px;
+    padding: 0px 20px 60px;
   }
 }
 @media (min-width: 1024px) {
@@ -532,9 +544,11 @@
   display: grid;
   padding: 0px;
   margin: 0px;
+
 }
 @media (min-width: 768px) {
   .photo__gallery {
+    height: 1400px;
     grid-template-columns: repeat(3, 230px);
     grid-template-rows: repeat(3, 105px);
     /*grid-template-columns: repeat(3, 250px);
@@ -543,6 +557,7 @@
 }
 @media (min-width: 1024px) {
 .photo__gallery {
+    height: 823px;
     grid-template-columns: repeat(3, 300px);
     grid-template-rows: repeat(4, 100px);
   }
