@@ -216,6 +216,7 @@
 .main {
   position: relative;
   display: flex;
+  flex-direction: column;
   margin: 0px;
   padding: 0px 10px;
   box-sizing: border-box;
@@ -470,6 +471,12 @@
 @media (min-width: 768px) {
   .photo {
     padding-bottom: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo {
+    min-width: 1024px;
+    height: 1091px;
   }
 }
 /*вылезло почему-то*/
