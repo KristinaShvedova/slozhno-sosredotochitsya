@@ -6,7 +6,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  /*padding-inline: 2.6%;*/
   display: grid;
   row-gap: 40px;
   font-family: "IBM Plex Mono";
@@ -14,6 +13,12 @@
   background-color: var(--background-color);
   background-image: var(--background-image);
 }
+/*@media (prefers-color-scheme: dark) {
+  .page {
+    --background-color: #000028;
+    --text-color: #F1B2CE;
+  }
+}*/
 
 .body {
   min-inline-size: 375px;
@@ -33,6 +38,8 @@
   margin: 0px;
   /*padding: 10px;*/
   padding: 10px 10px 10px 0px;
+  background-size: cover;
+  background-image: var(--background-image);
 }
 @media (min-width: 768px) {
   .header {
@@ -59,7 +66,7 @@
   height: 26px;
   margin: 0px;
   padding: 1px 4px 0px 0px;
-  color: #FF0070;
+  color: var(--main-color);
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -71,8 +78,8 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  border-top: 1px solid #FF0070;
-  border-right: 1px solid #FF0070;
+  border-top: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
 }
 .header__elipse {
   position: relative;
@@ -82,9 +89,9 @@
   margin: 0px 0px 1px 8px;
   /*размер круга зависит от паддинга*/
   padding: 1px;
-  background-color: #FF0070;
+  background-color: var(--main-color);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 0px 0px 5px 4px #FF0070 ;
+  box-shadow: 0px 0px 5px 4px var(--main-color);
   border-radius: 50%;
 }
 .header__theme-menu {
@@ -132,7 +139,7 @@
   min-height: 23px;
   /*чтоб к краю прибить*/
   padding: 0px 0px 0px 10px;
-  color: #FF0070;
+  color: var(--main-color);
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -140,22 +147,22 @@
   line-height: 18px;
 }
 .header__theme-menu-button {
-  color: #FF0070;
-  background-image: url(../images/cover-image-dark.png);
+  color: var(--main-color);
+  background-image: var(--background-image);
   border: none;
   min-width: 44px;
   min-height: 23px;
   padding: 1.5px 13px;
 }
 .header__theme-menu-button_active {
-  border: 1px solid #FF0070;
+  border: 1px solid var(--main-color);
 }
 .header__theme-menu-button_active:hover {
   border: 1px solid rgba(255, 0, 112, 0.40);  
 }
 .header__theme-menu-button_active:focus {
   /* если поставить фокус-визибл не так работает эффект*/
-  border-bottom: 1px solid #FF0070;
+  border-bottom: 1px solid var(--main-color);
   border-top: none;
   border-right: none;
   border-left: none;
@@ -166,8 +173,8 @@
   max-height: 192px;
   margin: 0px;
   padding: 65px 10px 55px;
-  color: #DB00FF;
-  text-shadow: 4px 4px 0px #FF0070;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0px var(--main-color);
   font-size: 116px;
   font-style: normal;
   font-weight: 700;
@@ -193,8 +200,8 @@
   max-height: 117px;
   margin: 0px 10px 31px;
   padding: 0px;
-  background-color: #FF0070;
-  color: #000028;
+  background-color: var(--main-color);
+  color: var(--background-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -218,8 +225,8 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid #FF0070;
-  border-left: 1px solid #FF0070;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
   margin: 0px 0px 0px 10px;
 }
 @media (min-width: 768px) {
@@ -256,8 +263,8 @@
   flex-direction: column;
   margin: 0px;
   padding: 0px 10px;
-  background-color: #000028;
-  color: #FF0070;
+  background-color: var(--background-color);
+  color: var(--main-color);
 }
 @media (min-width: 768px) {
   .lead {
@@ -271,7 +278,7 @@
   min-width: 345px;
   max-height: 47px;
   padding: 40px 0px 0px;
-  color: #FF0070;
+  color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -306,15 +313,15 @@
   min-width: 355px;
   min-height: 23px;
   margin: 20px 0px 10px 0px;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--background-color);
+  background-color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
 .lead__text {
-  color: #F1B2CE;
+  color: var(--text-color);
   margin: 0px;
   font-size: 18px;
   font-style: normal;
@@ -331,8 +338,8 @@
   min-width: 375px;
   padding: 50px 10px 0px;
   margin: 0px;
-  background-color: #000028;
-  color: #FF0070;
+  background-color: var(--background-color);
+  color: var(--main-color);
 }
 @media (min-width: 768px) {
   .attention {
@@ -347,7 +354,7 @@
   padding: 0px;
   min-width: 236px;
   max-height: 47px;
-  color: #FF0070;
+  color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -388,15 +395,15 @@
   max-height: 24px;
   margin: 20px 0px 10px 0px;
   padding: 0px;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--background-color);
+  background-color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
 .attention__text {
-  color: #F1B2CE;
+  color: var(--text-color);
   margin: 0px;
   font-size: 18px;
   font-style: normal;
@@ -404,14 +411,14 @@
   line-height: 23.4px;
 }
 .text-shadow {
-  text-shadow: #FF0070 2px 2px;
+  text-shadow: var(--main-color) 2px 2px;
 }
 
 .advices {
   /* SCROLL < 375px */
   min-width: 375px;
   padding: 50px 10px 0px;
-  background-color: #000028;
+  background-color: var(--background-color);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -431,7 +438,7 @@
   min-width: 315px;
   padding: 0px 0px 20px;
   margin: 0px;
-  color: #FF0070;
+  color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -455,8 +462,8 @@
 .advices__subtitle {
   padding: 0px 0px 0px;
   margin: 0px;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--background-color);
+  background-color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -468,15 +475,15 @@
 .advices__paragraph {
   padding: 0px 0px 0px;
   margin: 0px;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--background-color);
+  background-color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px;
 }
 .advices__text {
-  color: #F1B2CE;
+  color: var(--text-color);
   margin: 0px;
   padding: 0px 0px 20px;
   font-size: 18px;
@@ -490,7 +497,7 @@
   box-sizing: border-box;
   padding: 0px 10px 40px;
   margin: 0px;
-  background-color: #000028;
+  background-color: var(--background-color);
 }
 @media (min-width: 768px) {
   .photo {
@@ -509,8 +516,8 @@
   max-height: 24px;
   padding: 0px;
   margin: 0px;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--background-color);
+  background-color: var(--main-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -704,8 +711,8 @@
   margin: 0px 0px 0px 330px;
   position: relative;
   display: inline-block;
-  border-top: 1px solid #FF0070;
-  border-right: 1px solid #FF0070;
+  border-top: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
 }
 @media (min-width: 768px) {
   .footer__rectangle-top {
@@ -721,9 +728,10 @@
   position: relative;
   display: flex;
   justify-content: center;
+  text-shadow: 2px 2px 0px var(--main-color);
   margin: 0px;
   padding: 245px 13px;
-  color: #DB00FF;
+  color: var(--title-color);
   font-size: 116px;
   font-style: normal;
   font-weight: 700;
@@ -744,6 +752,6 @@
   height: 25px;
   position: relative;
   display: inline-block;
-  border-bottom: 1px solid #FF0070;
-  border-left: 1px solid #FF0070;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
 }
