@@ -1,5 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/** { 
+    outline: 1px solid green;
+  } */
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-position: center;
@@ -46,6 +50,33 @@
     padding: 20px 20px 20px 0px;
   }
 }
+
+.header::before {
+  /* верхний уголок */
+  content: '';
+  /* не перекрывает никакие элементы */
+  position: absolute;
+  margin: 0px 0px 0px 979px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+}
+
+.header::after {
+  /* нижний уголок */
+  content: '';
+  /* не перекрывает никакие элементы */
+  position: absolute;
+  margin: 0px 0px 0px 19px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
+}
+
 .header__record {
   position: relative;
   display: flex;
@@ -62,10 +93,13 @@
   }
 }
 .header__rec {
+  display: inline-block;
+  /* так его отступы не перекрывают никакие элементы */
+  position: absolute;
+  padding: 0px 28px 0px 943px;
+  margin: 0px;
   width: 32px;
   height: 26px;
-  margin: 0px;
-  padding: 1px 4px 0px 0px;
   color: var(--main-color);
   text-align: center;
   font-size: 18px;
@@ -73,7 +107,23 @@
   font-weight: 400;
   line-height: 25px;
 }
-.header__rectangle-top {
+.header__rec::before {
+  /* круг */
+  content: '';
+  /*не двигает никак rec*/
+  position: absolute;
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 10px 0px 1px 45px;
+  /*размер круга зависит от паддинга*/
+  padding: 1px;
+  background-color: var(--main-color);
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 0px 5px 4px var(--main-color);
+  border-radius: 50%;
+}
+.common__rectangle-top {
   position: relative;
   display: inline-block;
   width: 25px;
@@ -220,7 +270,7 @@
     margin: 0px 0px 89px 513px;
   }
 }
-.header__rectangle-bottom {
+.common__rectangle-bottom {
   position: relative;
   display: inline-block;
   width: 25px;
@@ -272,7 +322,7 @@
     padding: 0px 20px;
   }
 }
-.lead__title {
+.main__title {
   margin: 0px;
   /* MIN-WIDTH 355PX */
   min-width: 345px;
@@ -285,14 +335,14 @@
   line-height: 23.4px;
 }
 @media (min-width: 768px) {
-  .lead__title {
+  .main__title {
     min-width: 236px;
     max-height: 71px;
     padding: 60px 20px 0px 0px;
   }
 }
 @media (min-width: 1024px) {
-  .lead__title {
+  .main__title {
     min-width: 315px;
     max-height: 47px;
   }
@@ -309,7 +359,7 @@
   margin-top: 40px;
 }
 }
-.lead__subtitle {
+.main__subtitle {
   min-width: 355px;
   min-height: 23px;
   margin: 20px 0px 10px 0px;
@@ -320,7 +370,7 @@
   font-weight: 700;
   line-height: 23.4px;
 }
-.lead__text {
+.main__text {
   color: var(--text-color);
   margin: 0px;
   font-size: 18px;
@@ -349,7 +399,7 @@
     padding: 50px 20px 0px;
   }
 }
-.attention__title {
+.main__title {
   margin: 0px;
   padding: 0px;
   min-width: 236px;
@@ -390,7 +440,7 @@
 .attention__cell {
   min-width: 315px;
 }
-.attention__subtitle {
+.main__subtitle {
   min-width: 315px;
   max-height: 24px;
   margin: 20px 0px 10px 0px;
@@ -402,7 +452,7 @@
   font-weight: 700;
   line-height: 23.4px;
 }
-.attention__text {
+.main__text {
   color: var(--text-color);
   margin: 0px;
   font-size: 18px;
@@ -459,7 +509,7 @@
 .advices__table {
   /* flex */
 }
-.advices__subtitle {
+.main__subtitle {
   padding: 0px 0px 0px;
   margin: 0px;
   color: var(--background-color);
@@ -469,10 +519,10 @@
   font-weight: 700;
   line-height: 23.4px;
 }
-.advices__subtitle:first-of-type {
+.main__subtitle:first-of-type {
   margin-bottom: 20px;
 }
-.advices__paragraph {
+.main__paragraph {
   padding: 0px 0px 0px;
   margin: 0px;
   color: var(--background-color);
@@ -551,7 +601,7 @@
   display: grid;
   padding: 0px;
   margin: 0px;
-
+  list-style-type: none;
 }
 @media (min-width: 768px) {
   .photo__gallery {
@@ -747,6 +797,32 @@
     padding: 274px 276px 300px;
   }
 }
+.footer::before {
+  /* верхний уголок */
+  content: '';
+  /* не перекрывает никакие элементы */
+  position: absolute;
+  margin: 0px 0px 0px 959px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+}
+
+.footer::after {
+  /* нижний уголок */
+  content: '';
+  /* не перекрывает никакие элементы */
+  position: absolute;
+  margin: 0px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
+}
+
 .footer__rectangle-bottom {
   width: 25px;
   height: 25px;
