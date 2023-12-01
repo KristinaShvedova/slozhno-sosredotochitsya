@@ -12,11 +12,12 @@
   background-attachment: fixed;
   display: grid;
   row-gap: 40px;
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", sans-serif;
   margin: 0px auto;
   background-color: var(--background-color);
   background-image: var(--background-image);
 }
+
 /*@media (prefers-color-scheme: dark) {
   .page {
     --background-color: #000028;
@@ -35,6 +36,8 @@
 /*375 - 668px*/
 
 .header {
+  /* высота окна */
+  height: 100vh;
   position: relative;
   min-width: 375px;
   box-sizing: border-box;
@@ -57,7 +60,7 @@
   /* не перекрывает никакие элементы */
   position: absolute;
   margin: 0px 0px 0px 979px;
-  display: inline-block;
+  display: block;
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--main-color);
@@ -70,37 +73,21 @@
   /* не перекрывает никакие элементы */
   position: absolute;
   margin: 0px 0px 0px 19px;
-  display: inline-block;
+  display: block;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--main-color);
   border-left: 1px solid var(--main-color);
 }
 
-.header__record {
-  position: relative;
-  display: flex;
-  float: right;
-  /*justify-content: right;*/
-  margin: 0px;
-  padding: 0px;
-  width: 60px;
-  height: 26px;
-}
-@media (min-width: 768px) {
-  .header__record {
-    padding: 0px;
-  }
-}
 .header__rec {
   display: inline-block;
   /* так его отступы не перекрывают никакие элементы */
   position: absolute;
   padding: 0px 28px 0px 943px;
   margin: 0px;
-  width: 32px;
-  height: 26px;
   color: var(--main-color);
+  text-transform: uppercase;
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -113,63 +100,39 @@
   /*не двигает никак rec*/
   position: absolute;
   display: inline-block;
-  width: 3px;
-  height: 3px;
-  margin: 10px 0px 1px 45px;
+  width: 9px;
+  height: 9px;
+  margin: 8px 10px 0px 44px;
   /*размер круга зависит от паддинга*/
-  padding: 1px;
+  padding: 0px;
   background-color: var(--main-color);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 0px 0px 5px 4px var(--main-color);
+  box-shadow: 0px 0px 4px 2px var(--main-color);
   border-radius: 50%;
 }
-.common__rectangle-top {
-  position: relative;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--main-color);
-  border-right: 1px solid var(--main-color);
-}
-.header__elipse {
-  position: relative;
-  display: inline-block;
-  width: 3px;
-  height: 3px;
-  margin: 0px 0px 1px 8px;
-  /*размер круга зависит от паддинга*/
-  padding: 1px;
-  background-color: var(--main-color);
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 0px 0px 5px 4px var(--main-color);
-  border-radius: 50%;
-}
+
 .header__theme-menu {
-  width: 70px;
-  height: 104px;
   display: flex;
-  /*justify-content: right;*/
+  /* по ширине */
+  justify-content: center;
+  /* по высоте */
+  align-items: center;
   position: relative;
   margin: 0px;
-  padding: 40px 10px 0px 295px;
-  align-content: center;
+  /*padding: 40px 10px 0px 295px;*/
 }
 @media (min-width: 768px) {
   .header__theme-menu {
-    padding: 147px 20px 0px 678px;
+    /*padding: 147px 20px 0px 678px;*/
   }
 }
 @media (min-width: 1024px) {
   .header__theme-menu {
-    padding: 0px 310px 0px 397px;
-    width: 236px;
-    height: 25px;
+    /*padding: 0px 310px 0px 397px;*/
   }
 }
 /*нужно тоже прибить его к краю*/
 .header__theme-menu-list {
-  width: 70px;
-  height: 104px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -180,13 +143,11 @@
 @media (min-width: 1024px) {
   .header__theme-menu-list {
     flex-direction: row;
-    width: 236px;
-    height: 25px;
   }
 }
 .header__theme-menu-item {
-  min-width: 44px;
-  min-height: 23px;
+  /* min-width: 44px;
+  min-height: 23px; */
   /*чтоб к краю прибить*/
   padding: 0px 0px 0px 10px;
   color: var(--main-color);
@@ -200,15 +161,17 @@
   color: var(--main-color);
   background-image: var(--background-image);
   border: none;
+  text-transform: lowercase;
   min-width: 44px;
   min-height: 23px;
   padding: 1.5px 13px;
 }
 .header__theme-menu-button_active {
-  border: 1px solid var(--main-color);
+  outline: 1px solid var(--main-color);
+  pointer-events: none;
 }
 .header__theme-menu-button_active:hover {
-  border: 1px solid rgba(255, 0, 112, 0.40);  
+  outline: 1px solid rgba(255, 0, 112, 0.40);  
 }
 .header__theme-menu-button_active:focus {
   /* если поставить фокус-визибл не так работает эффект*/
@@ -220,12 +183,13 @@
 .header__title {
   position: relative;
   min-width: 355px;
-  max-height: 192px;
   margin: 0px;
   padding: 65px 10px 55px;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--main-color);
-  font-size: 116px;
+  /* clamp(min, val, max) */
+  /* на всех размерах стоит 120пх по итогу ИСПРАВИТЬ */
+  font-size: clamp(116px, 120px, 157px);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
@@ -233,23 +197,23 @@
 @media (min-width: 768px) {
   .header__title {
     min-width: 577px;
-    max-height: 99px;
     padding: 0px 0px 162px;
   }
 }
 @media (min-width: 1024px) {
   .header__title {
     min-width: 759px;
-    max-height: 130px;
     padding: 274.5px 0px 114px;
   }
 }
 .header__subtitle {
-  position: relative;
-  min-width: 355px;
-  max-height: 117px;
-  margin: 0px 10px 31px;
+  position: absolute;
+  display: flex;
+  /* прибить к правому краю */
+  right: 0px;
+  margin: 0px 20px 0px 0px;
   padding: 0px;
+  min-width: 355px;
   background-color: var(--main-color);
   color: var(--background-color);
   font-size: 18px;
@@ -259,15 +223,14 @@
 }
 @media (min-width: 768px) {
   .header__subtitle {
-    min-width: 364px;
-    margin: 0px 20px 138px 384px;
+    max-width: 364px;
+    /*margin: 0px 20px 138px 384px;*/
   }
 }
 @media (min-width: 1024px) {
   .header__subtitle {
-    min-width: 491px;
-    max-height: 71px;
-    margin: 0px 0px 89px 513px;
+    max-width: 491px;
+    /*margin: 0px 0px 89px 513px;*/
   }
 }
 .common__rectangle-bottom {
@@ -293,7 +256,7 @@
   padding: 0px;
   box-sizing: border-box;
   min-width: 375px;
-  background-color: var(--background-color);
+  /*background-color: var(--background-color);*/
 }
 
 @media (min-width: 768px) {
@@ -326,7 +289,6 @@
   margin: 0px;
   /* MIN-WIDTH 355PX */
   min-width: 345px;
-  max-height: 47px;
   padding: 40px 0px 0px;
   color: var(--main-color);
   font-size: 18px;
@@ -337,14 +299,12 @@
 @media (min-width: 768px) {
   .main__title {
     min-width: 236px;
-    max-height: 71px;
     padding: 60px 20px 0px 0px;
   }
 }
 @media (min-width: 1024px) {
   .main__title {
     min-width: 315px;
-    max-height: 47px;
   }
 }
 .lead__table {
@@ -361,7 +321,6 @@
 }
 .main__subtitle {
   min-width: 355px;
-  min-height: 23px;
   margin: 20px 0px 10px 0px;
   color: var(--background-color);
   background-color: var(--main-color);
@@ -393,9 +352,6 @@
 }
 @media (min-width: 768px) {
   .attention {
-    position: relative;
-    display: flex;
-    flex-direction: column;
     padding: 50px 20px 0px;
   }
 }
@@ -403,7 +359,6 @@
   margin: 0px;
   padding: 0px;
   min-width: 236px;
-  max-height: 47px;
   color: var(--main-color);
   font-size: 18px;
   font-style: normal;
@@ -413,13 +368,11 @@
 @media (min-width: 768px) {
   .attention__title {
     max-width: 236px;
-    max-height: 70px;
   }
 }
 @media (min-width: 1024px) {
   .attention__title {
     max-width: 315px;
-    max-height: 47px;
   }
 }
 .attention__table {
@@ -431,8 +384,6 @@
 }
 @media (min-width: 1024px) {
   .attention__table {
-    position: relative;
-    display: flex;
     flex-direction: row;
     gap: 20px;
   }
@@ -442,7 +393,6 @@
 }
 .main__subtitle {
   min-width: 315px;
-  max-height: 24px;
   margin: 20px 0px 10px 0px;
   padding: 0px;
   color: var(--background-color);
@@ -458,7 +408,6 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 23.4px;
 }
 .text-shadow {
   text-shadow: var(--main-color) 2px 2px;
@@ -478,8 +427,6 @@
   .advices {
     padding: 50px 20px 0px;
     min-width: 728px;
-    position: relative;
-    display: flex;
     flex-direction: row;
     gap: 20px;
   }
@@ -497,7 +444,6 @@
 @media (min-width: 768px) {
   .advices__title {
     min-width: 236px;
-    max-height: 98px;
     padding: 0px;
   }
 }
@@ -557,13 +503,11 @@
 @media (min-width: 1024px) {
   .photo {
     min-width: 1024px;
-    height: 1091px;
   }
 }
 /*вылезло почему-то*/
 .photo__title {
   min-width: 355px;
-  max-height: 24px;
   padding: 0px;
   margin: 0px;
   color: var(--background-color);
@@ -583,20 +527,7 @@
     min-width: 984px;
   }
 }
-/*
-.photo__gallery {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0px;
-  margin: 0px;
-}
-@media (min-width: 768px) {
-  .photo__gallery {
-    flex-direction: row;
-  }
-}*/
+
 .photo__gallery {
   display: grid;
   padding: 0px;
@@ -605,20 +536,21 @@
 }
 @media (min-width: 768px) {
   .photo__gallery {
-    height: 1400px;
+    /*grid-template-columns: repeat(3, 230px);
+    grid-template-rows: repeat(3, 105px);*/
     grid-template-columns: repeat(3, 230px);
-    grid-template-rows: repeat(3, 105px);
-    /*grid-template-columns: repeat(3, 250px);
-    grid-template-rows: repeat(3, 200px);*/
   }
 }
 @media (min-width: 1024px) {
-.photo__gallery {
-    height: 823px;
+  .photo__gallery {
+    /*grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(4, 100px);*/
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(4, 100px);
   }
 }
+
+/* У КАРТОЧЕК УБРАТЬ ШИРИНУ 
+ФИКСАЦИЯ ТОЛЬКО ПО СЕТКЕ GRID */
 .photo__sunset {
   min-width: 315px;
   height: 142px;
@@ -737,64 +669,56 @@
 .footer {
   padding: 10px;
   min-width: 375px;
-  height: 667px;
+  min-height: 668px;
+  /* высота окна */
+  height: 100vh;
   box-sizing: border-box;
   background-color: var(--background-color);
+  /* так встанет title ы центр блока но нужно углы двигать 
+  display: flex;
+  /* по ширине 
+  justify-content: center;
+  /* по высоте 
+  align-items: center; */
 }
 @media (min-width: 768px) {
   .footer {
     min-width: 768px;
-    height: 1024px;
     padding: 20px;
   }
 }
 @media (min-width: 1024px) {
   .footer {
     min-width: 1024px;
-    height: 768px;
-  }
-}
-.footer__rectangle-top {
-  width: 25px;
-  height: 25px;
-  padding: 0px;
-  margin: 0px 0px 0px 330px;
-  position: relative;
-  display: inline-block;
-  border-top: 1px solid var(--main-color);
-  border-right: 1px solid var(--main-color);
-}
-@media (min-width: 768px) {
-  .footer__rectangle-top {
-    margin-left: 703px;
-  }
-}
-@media (min-width: 1024px) {
-  .footer__rectangle-top {
-    margin-left: 959px;
   }
 }
 .footer__title {
   position: relative;
   display: flex;
+  /* высота тайтла = высота блока -> центрировали тайтл */
+  height: 100%;
+  /* по ширине */
   justify-content: center;
+  /* по высоте */
+  align-items: center;
   text-shadow: 2px 2px 0px var(--main-color);
   margin: 0px;
-  padding: 245px 13px;
+  /*padding: 245px 13px;*/
   color: var(--title-color);
-  font-size: 116px;
+  /* на всех размерах стоит 120пх по итогу ИСПРАВИТЬ */
+  font-size: clamp(116px, 120px, 157px);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
 }
 @media (min-width: 768px) {
   .footer__title {
-    padding: 418px 204px;
+    /*padding: 418px 204px;*/
   }
 }
 @media (min-width: 1024px) {
   .footer__title {
-    padding: 274px 276px 300px;
+    /*padding: 274px 276px 300px;*/
   }
 }
 .footer::before {
@@ -816,7 +740,7 @@
   /* не перекрывает никакие элементы */
   position: absolute;
   margin: 0px;
-  display: inline-block;
+  display: block;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--main-color);
@@ -827,7 +751,7 @@
   width: 25px;
   height: 25px;
   position: relative;
-  display: inline-block;
+  display: block;
   border-bottom: 1px solid var(--main-color);
   border-left: 1px solid var(--main-color);
 }
