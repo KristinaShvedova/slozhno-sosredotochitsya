@@ -322,19 +322,10 @@
 @media (min-width: 768px) {
   .lead {
     flex-direction: row;
-    padding: 0px 20px;
+    padding: 60px 20px 0px;
   }
 }
-.main__title {
-  min-width: 355px;
-  padding: 0px;
-  margin: 50px 0px 0px;
-  color: var(--main-color);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23.4px;
-}
+
 
 .main__title-lead {
   min-width: 355px;
@@ -348,16 +339,35 @@
 }
 
 @media (min-width: 768px) {
-  .main__title {
+  .main__title-lead {
     min-width: 236px;
-    padding: 60px 20px 0px 0px;
+    margin: 0px;
   }
 }
+
 @media (min-width: 1024px) {
   .main__title {
     min-width: 315px;
   }
 }
+
+.main__subtitle {
+  min-width: 355px;
+  margin: 20px 0px 10px 0px;
+  color: var(--background-color);
+  background-color: var(--main-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+@media (min-width: 768px) {
+  .main__subtitle {
+  margin-top: 0px;
+  }
+}
+
 .lead__table {
   /*для флекса таблица*/
   position: relative;
@@ -369,16 +379,6 @@
 .lead__table {
   margin-top: 40px;
 }
-}
-.main__subtitle {
-  min-width: 355px;
-  margin: 20px 0px 10px 0px;
-  color: var(--background-color);
-  background-color: var(--main-color);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23.4px;
 }
 
 .main__subtitle-advices {
@@ -401,6 +401,12 @@
   line-height: 23.4px;
 }
 
+@media (min-width: 768px) {
+  .main__text {
+    padding: 0px 0px 20px;
+  }
+}
+
 .attention {
   /* SCROLL <391px */
   position: relative;
@@ -416,6 +422,22 @@
 @media (min-width: 768px) {
   .attention {
     padding: 50px 20px 0px;
+  }
+}
+.main__title {
+  min-width: 355px;
+  padding: 0px;
+  margin: 50px 0px 0px;
+  color: var(--main-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+@media (min-width: 768px) {
+  .main__title {
+  margin: 80px 0px 0px;
   }
 }
 
@@ -471,47 +493,25 @@
   }
 }
 
-/*вылезло почему-то*/
-.photo__title {
-  min-width: 355px;
-  padding: 0px;
-  margin: 0px;
-  color: var(--background-color);
-  background-color: var(--main-color);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23.4px;
-}
-@media (min-width: 768px) {
-  .photo__title {
-    min-width: 728px;
-  }
-}
-@media (min-width: 1024px) {
-  .photo__title {
-    min-width: 984px;
-  }
-}
-
 .photo__gallery {
   display: grid;
   max-width: 375px;
-  padding: 0px;
+  padding: 10px 0px 0px;
   margin: 0px;
   list-style-type: none;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .photo__gallery {
+    padding: 20px 0px 0px;
     max-width: 768px;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(1, 3fr);
-    grid-template-rows: repeat(3, 1fr);
+    height: 800px;
+    grid-auto-flow: row;
+    /*grid-template-columns: 229px 230px 229px;
+    grid-template-rows: 192px 320px 318px;*/
+    grid-template-columns: repeat(3, 229px);
+    grid-auto-rows: 85px;
     gap: 20px;
-    /*grid-template-columns: repeat(3, 230px);
-    grid-template-rows: repeat(3, 105px);*/
-    /*grid-template-columns: repeat(3, 230px);*/
-    
 
   }
 }
@@ -519,7 +519,7 @@
   .photo__gallery {
     /*grid-template-columns: repeat(3, 300px);
     grid-template-rows: repeat(4, 100px);*/
-    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-columns: repeat(3, 1fr);*/
   }
 }
 
@@ -530,31 +530,61 @@
   object-fit: cover;
 }
 
-.sunset {
-
-}
-.cats {
-
-}
-.music {
-
-}
-.books {
-
-}
-.street {
-
-}
-
 @media (min-width: 768px) {
   .image {
-    min-width: 229px;
-    max-width: 479px;
-    min-height: 230px;
-    max-height: 568x;
+    /*min-height: 230px;*/
+    padding: 0px;
   }
 }
 
+@media (min-width: 768px) {
+  .sunset {
+    height: 192px;
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 479px;
+  }
+}
+@media (min-width: 768px) {
+.cats {
+  height: 441px;
+  max-width: 229px;
+  display: grid;
+  grid-column: 3;
+  grid-row: 1;
+  }
+}
+
+@media (min-width: 768px) {
+.music {
+  height: 568px;
+  display: grid;
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 229px;
+  }
+}
+
+@media (min-width: 768px) {
+.books {
+  height: 230px;
+  display: grid;
+  grid-column: 2;
+  grid-row: 3;
+  }
+}
+
+@media (min-width: 768px) {
+.street {
+  height: 318px;
+  display: grid;
+  grid-column: 2;
+  grid-row: 5;
+  max-width: 479px;
+  margin: 40px 0px 0px;
+  }
+}
 /* У КАРТОЧЕК УБРАТЬ ШИРИНУ 
 ФИКСАЦИЯ ТОЛЬКО ПО СЕТКЕ GRID */
 
