@@ -38,19 +38,25 @@
 .header {
   /* высота окна */
   height: 100vh;
+  /* чтобы не сжалось */
+  min-height: 668px;
   position: relative;
   min-width: 375px;
   box-sizing: border-box;
-  min-height: 668px;
   margin: 0px;
-  /*padding: 10px;*/
   padding: 10px 10px 10px 0px;
   background-size: cover;
   background-image: var(--background-image);
 }
 @media (min-width: 768px) {
   .header {
+    min-height: 1024px;
     padding: 20px 20px 20px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    min-height: 768px;
   }
 }
 
@@ -59,7 +65,8 @@
   content: '';
   /* не перекрывает никакие элементы */
   position: absolute;
-  margin: 0px 0px 0px 979px;
+  margin: 0px;
+  right: 10px;
   display: block;
   width: 25px;
   height: 25px;
@@ -67,24 +74,18 @@
   border-right: 1px solid var(--main-color);
 }
 
-.header::after {
-  /* нижний уголок */
-  content: '';
-  /* не перекрывает никакие элементы */
-  position: absolute;
-  margin: 0px 0px 0px 19px;
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--main-color);
-  border-left: 1px solid var(--main-color);
+@media (min-width: 768px) {
+  .header::before {
+    right: 20px;
+  }
 }
 
 .header__rec {
   display: inline-block;
   /* так его отступы не перекрывают никакие элементы */
   position: absolute;
-  padding: 0px 28px 0px 943px;
+  right: 38px;
+  padding: 0px 3px 0px 0px;
   margin: 0px;
   color: var(--main-color);
   text-transform: uppercase;
@@ -93,6 +94,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 25px;
+}
+@media (min-width: 768px) {
+  .header__rec {
+    right: 48px;
+  }
 }
 .header__rec::before {
   /* круг */
@@ -114,21 +120,22 @@
 .header__theme-menu {
   display: flex;
   /* по ширине */
-  justify-content: center;
+  justify-content: right;
   /* по высоте */
   align-items: center;
   position: relative;
-  margin: 0px;
-  /*padding: 40px 10px 0px 295px;*/
+  padding: 0px;
+  margin: 65px 0px 0px;
 }
 @media (min-width: 768px) {
   .header__theme-menu {
-    /*padding: 147px 20px 0px 678px;*/
+    margin-top: 172px;
   }
 }
 @media (min-width: 1024px) {
   .header__theme-menu {
-    /*padding: 0px 310px 0px 397px;*/
+    margin: 0px;
+    justify-content: center;
   }
 }
 /*нужно тоже прибить его к краю*/
@@ -183,13 +190,13 @@
 .header__title {
   position: relative;
   min-width: 355px;
-  margin: 0px;
-  padding: 65px 10px 55px;
+  margin: 65px 10px 55px;
+  padding: 0px;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--main-color);
-  /* clamp(min, val, max) */
-  /* на всех размерах стоит 120пх по итогу ИСПРАВИТЬ */
-  font-size: clamp(116px, 120px, 157px);
+  /*font-size: clamp(116px, 120px, 157px);*/
+  /* чтобы среднее значение выбрал */
+  font-size: clamp(100px, 116px, 120px);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
@@ -197,13 +204,19 @@
 @media (min-width: 768px) {
   .header__title {
     min-width: 577px;
-    padding: 0px 0px 162px;
+    margin: 173px 219px 162px 0px;
+    padding: 0px;
+    /* чтобы среднее значение выбрал */
+     font-size: clamp(116px, 120px, 140px);
   }
 }
 @media (min-width: 1024px) {
   .header__title {
     min-width: 759px;
-    padding: 274.5px 0px 114px;
+    padding: 0px;
+    margin: 273px 245px 114px 0px;
+    /* чтобы среднее значение выбрал */
+    font-size: clamp(120px, 157px, 160px);
   }
 }
 .header__subtitle {
@@ -211,9 +224,9 @@
   display: flex;
   /* прибить к правому краю */
   right: 0px;
-  margin: 0px 20px 0px 0px;
+  margin: 0px 10px;
   padding: 0px;
-  min-width: 355px;
+  max-width: 355px;
   background-color: var(--main-color);
   color: var(--background-color);
   font-size: 18px;
@@ -224,16 +237,43 @@
 @media (min-width: 768px) {
   .header__subtitle {
     max-width: 364px;
-    /*margin: 0px 20px 138px 384px;*/
+    margin: 0px 20px 0px 0px;
   }
 }
 @media (min-width: 1024px) {
   .header__subtitle {
     max-width: 491px;
-    /*margin: 0px 0px 89px 513px;*/
   }
 }
-.common__rectangle-bottom {
+
+.header::after {
+  /* нижний уголок */
+  content: '';
+  /* не перекрывает никакие элементы */
+  position: absolute;
+  padding: 0px;
+  /* от title отступ */
+  margin: 203px 0px 0px 10px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
+}
+
+@media (min-width: 768px) {
+  .header::after {
+    margin: 255px 0px 0px 19px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header::after {
+    margin: 160px 0px 0px 19px;
+  }
+}
+
+/*.common__rectangle-bottom {
   position: relative;
   display: inline-block;
   width: 25px;
@@ -246,7 +286,9 @@
   .header__rectangle-bottom {
     margin: 20px 0px 0px 20px;
   }
-}
+}*/
+
+
 
 .main {
   position: relative;
